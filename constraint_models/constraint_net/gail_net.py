@@ -346,9 +346,10 @@ class GailDiscriminator(nn.Module):
         obs, orig_shape = self.flatten(obs)
         # No need to normalize as nominal obs are already normalized
         # obs = self.normalize_obs(obs, self.current_obs_mean, self.current_obs_var, self.clip_obs)
+
+        acs, orig_ac_shape = self.flatten(acs)
         acs = self.reshape_actions(acs)
         #        acs = self.clip_actions(acs, self.action_low, self.action_high)
-
         concat = self.select_appropriate_dims(np.concatenate([obs, acs], axis=-1))
         if self.num_spurious_features is not None:
             concat = self.add_spurious_features(concat, 'nominal', self.num_spurious_features)

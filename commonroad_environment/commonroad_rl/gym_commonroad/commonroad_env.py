@@ -97,6 +97,9 @@ class CommonroadEnv(gym.Env):
         # Overwrite environment configurations if specified
         if kwargs is not None:
             for k, v in kwargs.items():
+                # TODO: Find Cause of Error Why None config added? max_scene_per_env
+                if v is None:
+                    continue
                 assert k in self.configs, f"Configuration item not supported: {k}"
                 # TODO: update only one term in configs
                 if isinstance(v, dict):
