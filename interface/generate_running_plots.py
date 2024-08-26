@@ -16,6 +16,7 @@ def plot_results(mean_results_moving_avg_dict,
                  save_label,
                  legend_dict=None,
                  linestyle_dict=None,
+                 adjust=None,
                  legend_size=20,
                  axis_size=None,
                  img_size=None,
@@ -46,58 +47,89 @@ def plot_results(mean_results_moving_avg_dict,
                       legend_size=legend_size,
                       linestyle_dict=linestyle_dict,
                       axis_size=axis_size if axis_size is not None else 18,
+                      adjust=adjust,
                       title_size=20,
                       plot_name=plot_name, )
 
 
 def generate_plots():
-    axis_size = None
     save_msg = ''
+    save = True
+
     modes = ['train']
     plot_mode = 'all-methods'
     last_num = 100
 
-    # env_id = 'HCWithPos-v0'
     env_id = 'highD_velocity_constraint'
 
-    max_episodes = 6000
-    average_num = 100
-    max_reward = 10000
-    min_reward = 0
-    # plot_key = ['reward', 'reward_nc', 'constraint', 'reward_valid']
-    plot_key = ['reward', 'reward_nc', 'is_collision', 'reward_valid']
-    label_key = [None, None, None, None]
-    img_size = None
-    save = False
-    # title = 'Blocked Half-Cheetah'
-    title = 'HighD Velocity Constraint'
-    # constraint_keys = ['constraint']
-    constraint_keys = ['is_collision']
-    # plot_y_lim_dict = {'reward': (0, 7000),
-    #                    'reward_nc': (0, 5000),
-    #                    'constraint': (0, 1.1),
-    #                    'reward_valid': (0, 5000),
-    #                    }
-    plot_y_lim_dict = {'reward': (-35, 55),
-                       'reward_nc': (-35, 55),
-                       'is_collision': (0, 1.1),
-                       'reward_valid': (-35, 55),
-                       }
-    # method_names_labels_dict = {
-    #     "GAIL_HCWithPos-v0_with-action": 'GACL',  # 'GAIL',
-    #     "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
-    #     "ICRL_Pos_with-action": 'MECL',  # 'ICRL',
-    #     "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",
-    #     # "PPO_Pos": 'PPO',
-    #     "PPO_lag_Pos": 'PPO_lag',
-    # }
-    method_names_labels_dict = {
-        "GAIL_highd_velocity_constrain": 'GACL',  # 'GAIL',
-        # "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
-        # "ICRL_Pos_with-action": 'MECL',  # 'ICRL',
-        # "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",        
-        # "PPO_lag_Pos": 'PPO_lag',
-    }
+    if env_id == 'HCWithPos-v0':
+        max_episodes = 6000
+        average_num = 100
+        max_reward = 10000
+        min_reward = 0
+
+        axis_size = None
+        img_size = [8.5, 6.5]
+        adjust = (0.13, 0.96, 0.92, 0.12)
+
+        title = 'Blocked Half-Cheetah'
+
+        constraint_keys = ['constraint']
+        plot_key = ['reward', 'reward_nc', 'constraint', 'reward_valid']
+        # label_key = [None, None, None, None]
+        label_key = ['Rewards', 'Feasible Rewards', 'Collision Rate', 'Feasible Rewards']
+
+        plot_y_lim_dict = {'reward': (0, 6000),
+                            'reward_nc': (0, 5000),
+                            'constraint': (0, 1.1),
+                            'reward_valid': (0, 5000),
+                            }
+
+        method_names_labels_dict = {
+            "GAIL_HCWithPos-v0_with-action": 'GACL',  # 'GAIL',
+            "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
+            "ICRL_Pos_with-action": 'MECL',  # 'ICRL',
+            "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",
+            # "PPO_Pos": 'PPO',
+            "PPO_lag_Pos": 'PPO_lag',
+        }
+
+    elif env_id == 'highD_velocity_constraint':
+        max_episodes = 5000
+        average_num = 200
+        max_reward = 50
+        min_reward = -50
+
+        axis_size = 20
+        img_size = [8.5, 6.5]
+        adjust = (0.13, 0.96, 0.92, 0.12)
+
+        title = 'HighD Velocity Constraint'
+
+        constraint_keys = 'is_over_speed'
+        plot_key = ['reward', 'reward_nc', 'is_collision', 'is_off_road',
+                    'is_goal_reached', 'is_time_out', 'avg_velocity', 'is_over_speed']
+        label_key = ['Rewards', 'Feasible Rewards', 'Collision Rate', 'Off Road Rate',
+                        'Goal Reached Rate', 'Time Out Rate', 'Avg. Velocity', 'Over Speed Rate']
+
+        plot_y_lim_dict = {'reward': None,
+                            'reward_nc': None,
+                            'is_collision': None,
+                            'is_off_road': None,
+                            'is_goal_reached': None,
+                            'is_time_out': None,
+                            'avg_velocity': None,
+                            'is_over_speed': None}
+
+        method_names_labels_dict = {
+            "GAIL_highD_velocity_constraint": 'GACL',  # 'GAIL',
+            # "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
+            "ICRL_highD_velocity_constraint": 'MECL',  # 'ICRL',
+            # "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",
+            # "PPO_lag_Pos": 'PPO_lag',
+        }
+    else:
+        print(f"env_id is not correct! {env_id}")
 
     if plot_mode == 'part':
         for method_name in method_names_labels_dict.copy().keys():
@@ -260,6 +292,7 @@ def generate_plots():
                              axis_size=axis_size,
                              img_size=img_size,
                              linestyle_dict=linestyle_dict,
+                             adjust=adjust,
                              )
         for idx in range(len(plot_key)):
             mean_results_moving_avg_dict = {}
@@ -300,6 +333,7 @@ def generate_plots():
                          axis_size=axis_size,
                          img_size=img_size,
                          linestyle_dict=linestyle_dict,
+                         adjust=adjust,
                          )
 
 

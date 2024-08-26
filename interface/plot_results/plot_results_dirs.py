@@ -1,9 +1,20 @@
 def get_plot_results_dir(env_id):
     if env_id == 'highD_velocity_constraint':
         log_path_dict = {
-            "GAIL_highd_velocity_constrain": [
+            "GAIL_highD_velocity_constraint": [
                 '../save_model/GAIL-highD-velocity/train_GAIL_highd_velocity_constraint-multi_env-Aug-23-2024-15:25-seed_123/',
+                '../save_model/GAIL-highD-velocity/train_GAIL_highd_velocity_constraint-multi_env-Aug-25-2024-00:06-seed_321/',
+                '../save_model/GAIL-highD-velocity/train_GAIL_highd_velocity_constraint-multi_env-Aug-25-2024-02:54-seed_456/',
+                '../save_model/GAIL-highD-velocity/train_GAIL_highd_velocity_constraint-multi_env-Aug-25-2024-05:47-seed_654/',
+                '../save_model/GAIL-highD-velocity/train_GAIL_highd_velocity_constraint-multi_env-Aug-25-2024-08:28-seed_666/',
             ],
+            "ICRL_highD_velocity_constraint": [
+                '../save_model/ICRL-highD-velocity/train_ICRL_highD_velocity_constraint-multi_env-Aug-23-2024-21:16-seed_123/',
+                '../save_model/ICRL-highD-velocity/train_ICRL_highD_velocity_constraint-multi_env-Aug-25-2024-00:07-seed_321/',
+                '../save_model/ICRL-highD-velocity/train_ICRL_highD_velocity_constraint-multi_env-Aug-25-2024-04:54-seed_456/',
+                '../save_model/ICRL-highD-velocity/train_ICRL_highD_velocity_constraint-multi_env-Aug-25-2024-10:23-seed_654/',
+                '../save_model/ICRL-highD-velocity/train_ICRL_highD_velocity_constraint-multi_env-Aug-25-2024-15:14-seed_666/',
+            ]
         }
     elif env_id == 'highD_distance_constraint':
         max_episodes = 5000
@@ -13,7 +24,7 @@ def get_plot_results_dir(env_id):
         axis_size = 20
         img_size = [8.5, 6.5]
         title = 'HighD Distance Constraint'
-        constraint_key = 'is_too_closed'
+        constraint_keys = 'is_too_closed'
         plot_key = ['reward', 'reward_nc', 'reward_valid', 'is_collision', 'is_off_road',
                     'is_goal_reached', 'is_time_out', 'avg_velocity', 'is_over_speed', 'avg_distance',
                     'is_too_closed']
@@ -339,6 +350,21 @@ def get_plot_results_dir(env_id):
             ],
         }
     elif env_id == 'HCWithPos-v0':
+        max_episodes = 6000
+        average_num = 100
+        max_reward = 10000
+        min_reward = 0
+        axis_size = None
+        img_size = None
+        title = 'Blocked Half-Cheetah'
+        constraint_keys = ['constraint']
+        plot_key = ['reward', 'reward_nc', 'constraint', 'reward_valid']
+        label_key = [None, None, None, None]
+        plot_y_lim_dict = {'reward': (0, 7000),
+                           'reward_nc': (0, 5000),
+                           'constraint': (0, 1.1),
+                           'reward_valid': (0, 5000),
+                           }
         log_path_dict = {
             "PPO_lag_Pos": [
                 '../save_model/PPO-Lag-HC/train_ppo_lag_HCWithPos-v0-multi_env-Apr-21-2022-04:49-seed_123/',
