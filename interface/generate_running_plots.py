@@ -57,29 +57,46 @@ def generate_plots():
     plot_mode = 'all-methods'
     last_num = 100
 
-    env_id = 'HCWithPos-v0'
+    # env_id = 'HCWithPos-v0'
+    env_id = 'highD_velocity_constraint'
+
     max_episodes = 6000
     average_num = 100
     max_reward = 10000
     min_reward = 0
-    plot_key = ['reward', 'reward_nc', 'constraint', 'reward_valid']
+    # plot_key = ['reward', 'reward_nc', 'constraint', 'reward_valid']
+    plot_key = ['reward', 'reward_nc', 'is_collision', 'reward_valid']
     label_key = [None, None, None, None]
     img_size = None
     save = False
-    title = 'Blocked Half-Cheetah'
-    constraint_keys = ['constraint']
-    plot_y_lim_dict = {'reward': (0, 7000),
-                       'reward_nc': (0, 5000),
-                       'constraint': (0, 1.1),
-                       'reward_valid': (0, 5000),
+    # title = 'Blocked Half-Cheetah'
+    title = 'HighD Velocity Constraint'
+    # constraint_keys = ['constraint']
+    constraint_keys = ['is_collision']
+    # plot_y_lim_dict = {'reward': (0, 7000),
+    #                    'reward_nc': (0, 5000),
+    #                    'constraint': (0, 1.1),
+    #                    'reward_valid': (0, 5000),
+    #                    }
+    plot_y_lim_dict = {'reward': (-35, 55),
+                       'reward_nc': (-35, 55),
+                       'is_collision': (0, 1.1),
+                       'reward_valid': (-35, 55),
                        }
+    # method_names_labels_dict = {
+    #     "GAIL_HCWithPos-v0_with-action": 'GACL',  # 'GAIL',
+    #     "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
+    #     "ICRL_Pos_with-action": 'MECL',  # 'ICRL',
+    #     "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",
+    #     # "PPO_Pos": 'PPO',
+    #     "PPO_lag_Pos": 'PPO_lag',
+    # }
     method_names_labels_dict = {
-        "GAIL_HCWithPos-v0_with-action": 'GACL',  # 'GAIL',
-        "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
-        "ICRL_Pos_with-action": 'MECL',  # 'ICRL',
-        "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",
-        # "PPO_Pos": 'PPO',
-        "PPO_lag_Pos": 'PPO_lag',
+        "GAIL_highd_velocity_constrain": 'GACL',  # 'GAIL',
+        # "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
+        # "ICRL_Pos_with-action": 'MECL',  # 'ICRL',
+        # "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",        
+        # "PPO_lag_Pos": 'PPO_lag',
     }
 
     if plot_mode == 'part':

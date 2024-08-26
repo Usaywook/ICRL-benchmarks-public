@@ -159,5 +159,6 @@ data/highD/pickles/problem/*
 ./mujoco
 *.DS_Store
 
-
-
+# plot
+interface/plot_results/HCWithPos-v0
+interface/plot_results/highD_velocity_constraint
