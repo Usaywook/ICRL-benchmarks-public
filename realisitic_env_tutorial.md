@@ -153,12 +153,12 @@ cd ./interface/
 python train_gail.py ../config/highD_velocity_distance_constraint/train_GAIL_velocity_distance_constraint.yaml -n 5 -s 123
 
 # run BC2L
-python train_cirl.py ../config/highD_velocity_distance_constraint/train_Binary_highD_velocity_distance_constraint.yaml -n 5 -s 123
+python train_icrl.py ../config/highD_velocity_distance_constraint/train_Binary_highD_velocity_distance_constraint.yaml -n 5 -s 123
 
 # run MECL
-python train_cirl.py ../config/highD_velocity_distance_constraint/train_ICRL_highD_velocity_distance_constraint.yaml -n 5 -s 123
+python train_icrl.py ../config/highD_velocity_distance_constraint/train_ICRL_highD_velocity_distance_constraint.yaml -n 5 -s 123
 
 # run VICRL
-python train_cirl.py ../config/highD_velocity_distance_constraint/train_VICRL_highD_velocity_distance_constraint.yaml -n 5 -s 123
+python train_icrl.py ../config/highD_velocity_distance_constraint/train_VICRL_highD_velocity_distance_constraint.yaml -n 5 -s 123
 ```
 

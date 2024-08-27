@@ -14,7 +14,22 @@ def get_plot_results_dir(env_id):
                 '../save_model/ICRL-highD-velocity/train_ICRL_highD_velocity_constraint-multi_env-Aug-25-2024-04:54-seed_456/',
                 '../save_model/ICRL-highD-velocity/train_ICRL_highD_velocity_constraint-multi_env-Aug-25-2024-10:23-seed_654/',
                 '../save_model/ICRL-highD-velocity/train_ICRL_highD_velocity_constraint-multi_env-Aug-25-2024-15:14-seed_666/',
-            ]
+            ],
+            "Binary_highD_velocity_constraint": [
+                '../save_model/Binary-highD-velocity/train_Binary_highD_velocity_constraint-multi_env-Aug-23-2024-21:15-seed_123/',
+                '../save_model/Binary-highD-velocity/train_Binary_highD_velocity_constraint-multi_env-Aug-26-2024-12:07-seed_321/',
+                '../save_model/Binary-highD-velocity/train_Binary_highD_velocity_constraint-multi_env-Aug-26-2024-16:51-seed_456/',
+                '../save_model/Binary-highD-velocity/train_Binary_highD_velocity_constraint-multi_env-Aug-26-2024-21:33-seed_654/',
+                '../save_model/Binary-highD-velocity/train_Binary_highD_velocity_constraint-multi_env-Aug-27-2024-03:00-seed_666/',
+            ],
+            "VICRL_highD_velocity_constraint": [                
+                '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-24-2024-09:55-seed_123/',
+                '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-26-2024-12:07-seed_123/',
+                '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-26-2024-17:01-seed_456/',
+                '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-26-2024-22:00-seed_654/',
+                '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-27-2024-03:43-seed_666/',
+                '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-27-2024-13:33-seed_321/',
+            ],
         }
     elif env_id == 'highD_distance_constraint':
         max_episodes = 5000

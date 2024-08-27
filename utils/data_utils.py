@@ -205,10 +205,10 @@ def read_running_logs(monitor_path_all, read_keys, max_reward, min_reward, max_e
             for key in read_keys:
                 if key == 'reward_valid':
                     valid_flag = True
-                    # continue_flag = False
+                    # continue_flag = False                    
                     for constraint_key in constraint_keys:
                         if results[key_indices[constraint_key]] == '=':
-                            valid_flag = False
+                            valid_flag = False                            
                         try:
                             if int(results[
                                        key_indices[constraint_key]]) != 0:  # if constraint is not broken at this episode

@@ -106,7 +106,7 @@ def generate_plots():
 
         title = 'HighD Velocity Constraint'
 
-        constraint_keys = 'is_over_speed'
+        constraint_keys = ['is_collision', 'is_off_road', 'is_over_speed', 'is_time_out'] 
         plot_key = ['reward', 'reward_nc', 'is_collision', 'is_off_road',
                     'is_goal_reached', 'is_time_out', 'avg_velocity', 'is_over_speed']
         label_key = ['Rewards', 'Feasible Rewards', 'Collision Rate', 'Off Road Rate',
@@ -123,9 +123,9 @@ def generate_plots():
 
         method_names_labels_dict = {
             "GAIL_highD_velocity_constraint": 'GACL',  # 'GAIL',
-            # "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
+            "Binary_highD_velocity_constraint": 'BC2L',  # 'Binary',
             "ICRL_highD_velocity_constraint": 'MECL',  # 'ICRL',
-            # "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",
+            "VICRL_highD_velocity_constraint": "VICRL",            
             # "PPO_lag_Pos": 'PPO_lag',
         }
     else:
