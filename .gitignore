@@ -162,3 +162,4 @@ data/highD/pickles/problem/*
 # plot
 interface/plot_results/HCWithPos-v0
 interface/plot_results/highD_velocity_constraint
+interface/plot_results/highD_velocity_distance_constraint

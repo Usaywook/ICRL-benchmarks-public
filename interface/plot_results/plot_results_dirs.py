@@ -1,6 +1,13 @@
 def get_plot_results_dir(env_id):
     if env_id == 'highD_velocity_constraint':
         log_path_dict = {
+            "PPO_lag_highD_velocity_constraint": [
+                '../save_model/PPO-Lag-highD-velocity/train_ppo_lag_highD_velocity_constraint-multi_env-Aug-26-2024-12:19-seed_123/',
+                '../save_model/PPO-Lag-highD-velocity/train_ppo_lag_highD_velocity_constraint-multi_env-Aug-27-2024-03:26-seed_321/',
+                '../save_model/PPO-Lag-highD-velocity/train_ppo_lag_highD_velocity_constraint-multi_env-Aug-27-2024-19:00-seed_456/',
+                '../save_model/PPO-Lag-highD-velocity/train_ppo_lag_highD_velocity_constraint-multi_env-Aug-28-2024-10:35-seed_654/',
+                '../save_model/PPO-Lag-highD-velocity/train_ppo_lag_highD_velocity_constraint-multi_env-Aug-28-2024-23:19-seed_666/',
+            ],
             "GAIL_highD_velocity_constraint": [
                 '../save_model/GAIL-highD-velocity/train_GAIL_highd_velocity_constraint-multi_env-Aug-23-2024-15:25-seed_123/',
                 '../save_model/GAIL-highD-velocity/train_GAIL_highd_velocity_constraint-multi_env-Aug-25-2024-00:06-seed_321/',
@@ -22,8 +29,8 @@ def get_plot_results_dir(env_id):
                 '../save_model/Binary-highD-velocity/train_Binary_highD_velocity_constraint-multi_env-Aug-26-2024-21:33-seed_654/',
                 '../save_model/Binary-highD-velocity/train_Binary_highD_velocity_constraint-multi_env-Aug-27-2024-03:00-seed_666/',
             ],
-            "VICRL_highD_velocity_constraint": [                
-                '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-24-2024-09:55-seed_123/',
+            "VICRL_highD_velocity_constraint": [
+                # '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-24-2024-09:55-seed_123/',
                 '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-26-2024-12:07-seed_123/',
                 '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-26-2024-17:01-seed_456/',
                 '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-26-2024-22:00-seed_654/',
@@ -82,16 +89,20 @@ def get_plot_results_dir(env_id):
                 '../save_model/Binary-highD-velocity-distance/train_Binary_highD_velocity_distance_constraint-multi_env-Aug-28-2024-13:40-seed_123/',
                 '../save_model/Binary-highD-velocity-distance/train_Binary_highD_velocity_distance_constraint-multi_env-Aug-29-2024-00:22-seed_321/',
                 '../save_model/Binary-highD-velocity-distance/train_Binary_highD_velocity_distance_constraint-multi_env-Aug-29-2024-10:56-seed_456/',
+                '../save_model/Binary-highD-velocity-distance/train_Binary_highD_velocity_distance_constraint-multi_env-Aug-29-2024-21:21-seed_654/',
+                '../save_model/Binary-highD-velocity-distance/train_Binary_highD_velocity_distance_constraint-multi_env-Aug-30-2024-09:30-seed_666/',
+
             ],
             "ICRL_highD_velocity_distance_constraint": [
                 '../save_model/ICRL-highD-velocity-distance/train_ICRL_highD_velocity_distance_constraint-multi_env-Aug-27-2024-20:26-seed_123/',
                 '../save_model/ICRL-highD-velocity-distance/train_ICRL_highD_velocity_distance_constraint-multi_env-Aug-28-2024-07:23-seed_321/',
                 '../save_model/ICRL-highD-velocity-distance/train_ICRL_highD_velocity_distance_constraint-multi_env-Aug-28-2024-18:27-seed_456/',
                 '../save_model/ICRL-highD-velocity-distance/train_ICRL_highD_velocity_distance_constraint-multi_env-Aug-29-2024-04:50-seed_654/',
+                '../save_model/ICRL-highD-velocity-distance/train_ICRL_highD_velocity_distance_constraint-multi_env-Aug-29-2024-16:16-seed_666/',
             ],
-            #"VICRL_highD_velocity_distance_constraint": [
-            #    '../save_model/VICRL-highD-velocity-distance/
-            #],
+            "VICRL_highD_velocity_distance_constraint": [
+               '../save_model/VICRL-highD-velocity-distance/train_VICRL_highD_velocity_distance_constraint-multi_env-Aug-30-2024-03:04-seed_123/',
+            ],
         }
     elif env_id == 'WGW-v0':
         log_path_dict = {

@@ -60,7 +60,7 @@ def generate_plots():
     plot_mode = 'all-methods'
     last_num = 100
 
-    env_id = 'highD_velocity_constraint'
+    env_id = 'highD_velocity_distance_constraint'
 
     if env_id == 'HCWithPos-v0':
         max_episodes = 6000
@@ -86,16 +86,16 @@ def generate_plots():
                             }
 
         method_names_labels_dict = {
-            "GAIL_HCWithPos-v0_with-action": 'GACL',  # 'GAIL',
-            "Binary_HCWithPos-v0_with-action": 'BC2L',  # 'Binary',
-            "ICRL_Pos_with-action": 'MECL',  # 'ICRL',
+            "GAIL_HCWithPos-v0_with-action": 'GACL',
+            "Binary_HCWithPos-v0_with-action": 'BC2L',
+            "ICRL_Pos_with-action": 'MECL',
             "VICRL_Pos_with-buffer_with-action_p-9e-1-1e-1_clr-5e-3": "VICRL",
             # "PPO_Pos": 'PPO',
             "PPO_lag_Pos": 'PPO_lag',
         }
-        
+
     elif env_id == 'highD_velocity_constraint':
-        max_episodes = 5000
+        max_episodes = 2000 #5000
         average_num = 200
         max_reward = 50
         min_reward = -50
@@ -106,7 +106,7 @@ def generate_plots():
 
         title = 'HighD Velocity Constraint'
 
-        constraint_keys = ['is_over_speed'] #['is_collision', 'is_off_road', 'is_over_speed', 'is_time_out'] 
+        constraint_keys = ['is_over_speed'] #['is_collision', 'is_off_road', 'is_over_speed', 'is_time_out']
         plot_key = ['reward', 'reward_nc', 'reward_valid', 'is_collision', 'is_off_road',
                     'is_goal_reached', 'is_time_out', 'avg_velocity', 'is_over_speed']
         label_key = ['Rewards', 'Feasible Rewards', 'Feasible Rewards', 'Collision Rate', 'Off Road Rate',
@@ -123,25 +123,25 @@ def generate_plots():
                             'is_over_speed': None}
 
         method_names_labels_dict = {
-            "GAIL_highD_velocity_constraint": 'GACL',  # 'GAIL',
-            "Binary_highD_velocity_constraint": 'BC2L',  # 'Binary',
-            "ICRL_highD_velocity_constraint": 'MECL',  # 'ICRL',
-            "VICRL_highD_velocity_constraint": "VICRL",            
-            # "PPO_lag_Pos": 'PPO_lag',
+            "GAIL_highD_velocity_constraint": 'GACL',
+            "Binary_highD_velocity_constraint": 'BC2L',
+            "ICRL_highD_velocity_constraint": 'MECL',
+            "VICRL_highD_velocity_constraint": "VICRL",
+            "PPO_lag_highD_velocity_constraint": 'PPO_lag',
         }
-    
+
     elif env_id == 'highD_distance_constraint':
         max_episodes = 5000
         average_num = 200
         max_reward = 50
         min_reward = -50
-        
+
         axis_size = 20
         img_size = [8.5, 6.5]
         adjust = (0.13, 0.96, 0.92, 0.12)
-        
+
         title = 'HighD Distance Constraint'
-        
+
         constraint_keys = 'is_too_closed'
         plot_key = ['reward', 'reward_nc', 'reward_valid', 'is_collision', 'is_off_road',
                     'is_goal_reached', 'is_time_out', 'avg_distance',
@@ -149,7 +149,7 @@ def generate_plots():
         label_key = ['Rewards', 'Feasible Rewards', 'Feasible Rewards', 'Collision Rate', 'Off Road Rate',
                      'Goal Reached Rate', 'Time Out Rate', 'Avg. Distance',
                      'Distance Constraint Violation Rate']
-        
+
         plot_y_lim_dict = {'reward': None,
                            'reward_nc': None,
                            'reward_valid': None,
@@ -168,19 +168,19 @@ def generate_plots():
         #                    'is_time_out': (0, 1),
         #                    'avg_distance': (50, 100),
         #                    'is_too_closed': (0, 0.5)}
-        
+
     elif env_id == 'highD_velocity_distance_constraint':
         max_episodes = 5000
         average_num = 200
         max_reward = 50
         min_reward = -50
-        
+
         axis_size = 20
         img_size = [8.5, 6.5]
         adjust = (0.13, 0.96, 0.92, 0.12)
-        
+
         title = 'HighD Velocity Distance Constraint'
-        
+
         constraint_keys = ['is_too_closed', 'is_over_speed']
         plot_key = ['reward', 'reward_nc', 'reward_valid', 'is_collision', 'is_off_road',
                     'is_goal_reached', 'is_time_out', 'avg_velocity', 'is_over_speed', 'avg_distance',
@@ -188,7 +188,7 @@ def generate_plots():
         label_key = ['Rewards', 'Feasible Rewards', 'Feasible Rewards', 'Collision Rate', 'Off Road Rate',
                      'Goal Reached Rate', 'Time Out Rate', 'Avg. Velocity', 'Over Speed Rate', 'Avg. Distance',
                      'Distance Constraint Violation Rate']
-        
+
         plot_y_lim_dict = {'reward': None,
                            'reward_nc': None,
                            'reward_valid': None,
@@ -211,15 +211,15 @@ def generate_plots():
         #                    'is_over_speed': (0, 1),
         #                    'avg_distance': (50, 100),
         #                    'is_too_closed': (0, 0.5)}
-        
+
         method_names_labels_dict = {
-            "GAIL_highD_velocity_distance_constraint": 'GACL',  
-            "Binary_highD_velocity_distance_constraint": 'BC2L',  
-            "ICRL_highD_velocity_distance_constraint": 'MECL',  
-            #"VICRL_highD_velocity_distance_constraint": "VICRL",            
+            "GAIL_highD_velocity_distance_constraint": 'GACL',
+            "Binary_highD_velocity_distance_constraint": 'BC2L',
+            "ICRL_highD_velocity_distance_constraint": 'MECL',
+            "VICRL_highD_velocity_distance_constraint": "VICRL",
             # "PPO_lag_Pos": 'PPO_lag',
         }
-        
+
     else:
         print(f"env_id is not correct! {env_id}")
 
