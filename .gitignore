@@ -154,6 +154,8 @@ data/expert_data/*
 data/highD/raw/*
 data/highD/xmls/*
 data/highD/pickles/problem/*
+data
+
 *.zip
 *.out
 ./mujoco
