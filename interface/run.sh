@@ -165,31 +165,31 @@ done
 #################################################
 
 # run PPO-Lag knowing the ground-truth
-python train_policy.py ../config/mujoco_WGW-v0/train_ppo_lag_WGW-v0-setting1.yaml -n 5 -s 123
-python train_policy.py ../config/mujoco_WGW-v0/train_ppo_lag_WGW-v0-setting2.yaml -n 5 -s 123
-python train_policy.py ../config/mujoco_WGW-v0/train_ppo_lag_WGW-v0-setting3.yaml -n 5 -s 123
-python train_policy.py ../config/mujoco_WGW-v0/train_ppo_lag_WGW-v0-setting4.yaml -n 5 -s 123
+CUDA_VISIBLE_DEVICES=$DEVICE python train_policy.py ../config/mujoco_WGW-v0/train_ppo_lag_WGW-v0-setting1.yaml -n 5 -s 123
+CUDA_VISIBLE_DEVICES=$DEVICE python train_policy.py ../config/mujoco_WGW-v0/train_ppo_lag_WGW-v0-setting2.yaml -n 5 -s 123
+CUDA_VISIBLE_DEVICES=$DEVICE python train_policy.py ../config/mujoco_WGW-v0/train_ppo_lag_WGW-v0-setting3.yaml -n 5 -s 123
+CUDA_VISIBLE_DEVICES=$DEVICE python train_policy.py ../config/mujoco_WGW-v0/train_ppo_lag_WGW-v0-setting4.yaml -n 5 -s 123
 
 # run GACL
-python train_gail.py ../config/mujoco_WGW-v0/train_GAIL_WGW-v0-setting1.yaml -n 5
-python train_gail.py ../config/mujoco_WGW-v0/train_GAIL_WGW-v0-setting2.yaml -n 5
-python train_gail.py ../config/mujoco_WGW-v0/train_GAIL_WGW-v0-setting3.yaml -n 5
-python train_gail.py ../config/mujoco_WGW-v0/train_GAIL_WGW-v0-setting4.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_gail.py ../config/mujoco_WGW-v0/train_GAIL_WGW-v0-setting1.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_gail.py ../config/mujoco_WGW-v0/train_GAIL_WGW-v0-setting2.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_gail.py ../config/mujoco_WGW-v0/train_GAIL_WGW-v0-setting3.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_gail.py ../config/mujoco_WGW-v0/train_GAIL_WGW-v0-setting4.yaml -n 5
 
 # run BC2L
-python train_icrl.py ../config/mujoco_WGW-v0/train_Binary_WGW-v0-setting1.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_Binary_WGW-v0-setting2.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_Binary_WGW-v0-setting3.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_Binary_WGW-v0-setting4.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_Binary_WGW-v0-setting1.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_Binary_WGW-v0-setting2.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_Binary_WGW-v0-setting3.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_Binary_WGW-v0-setting4.yaml -n 5
 
 # run MECL
-python train_icrl.py ../config/mujoco_WGW-v0/train_ICRL_WGW-v0-setting1.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_ICRL_WGW-v0-setting2.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_ICRL_WGW-v0-setting3.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_ICRL_WGW-v0-setting4.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_ICRL_WGW-v0-setting1.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_ICRL_WGW-v0-setting2.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_ICRL_WGW-v0-setting3.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_ICRL_WGW-v0-setting4.yaml -n 5
 
 # run VICRL
-python train_icrl.py ../config/mujoco_WGW-v0/train_VICRL_WGW-v0-setting1.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_VICRL_WGW-v0-setting2.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_VICRL_WGW-v0-setting3.yaml -n 5
-python train_icrl.py ../config/mujoco_WGW-v0/train_VICRL_WGW-v0-setting4.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_VICRL_WGW-v0-setting1.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_VICRL_WGW-v0-setting2.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_VICRL_WGW-v0-setting3.yaml -n 5
+CUDA_VISIBLE_DEVICES=$DEVICE python train_icrl.py ../config/mujoco_WGW-v0/train_VICRL_WGW-v0-setting4.yaml -n 5
