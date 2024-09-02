@@ -60,7 +60,7 @@ def generate_plots():
     plot_mode = 'all-methods'
     last_num = 100
 
-    env_id = 'highD_velocity_distance_constraint'
+    env_id = 'highD_velocity_constraint'
 
     if env_id == 'HCWithPos-v0':
         max_episodes = 6000
@@ -128,6 +128,8 @@ def generate_plots():
             "ICRL_highD_velocity_constraint": 'MECL',
             "VICRL_highD_velocity_constraint": "VICRL",
             "PPO_lag_highD_velocity_constraint": 'PPO_lag',
+            "UAICRL-CVAR_highD_velocity_constraint": 'UAICRL_CVAR',
+            "UAICRL-EXP_highD_velocity_constraint": 'UAICRL_EXP',
         }
 
     elif env_id == 'highD_distance_constraint':
@@ -142,7 +144,7 @@ def generate_plots():
 
         title = 'HighD Distance Constraint'
 
-        constraint_keys = 'is_too_closed'
+        constraint_keys = ['is_too_closed']
         plot_key = ['reward', 'reward_nc', 'reward_valid', 'is_collision', 'is_off_road',
                     'is_goal_reached', 'is_time_out', 'avg_distance',
                     'is_too_closed']
@@ -168,6 +170,13 @@ def generate_plots():
         #                    'is_time_out': (0, 1),
         #                    'avg_distance': (50, 100),
         #                    'is_too_closed': (0, 0.5)}
+        method_names_labels_dict = {
+            "GAIL_highD_distance_constraint": 'GACL',
+            "Binary_highD_distance_constraint": 'BC2L',
+            "ICRL_highD_distance_constraint": 'MECL',
+            "VICRL_highD_distance_constraint": "VICRL",
+            "PPO_lag_highD_distance_constraint": 'PPO_lag',
+        }
 
     elif env_id == 'highD_velocity_distance_constraint':
         max_episodes = 5000
@@ -217,7 +226,7 @@ def generate_plots():
             "Binary_highD_velocity_distance_constraint": 'BC2L',
             "ICRL_highD_velocity_distance_constraint": 'MECL',
             "VICRL_highD_velocity_distance_constraint": "VICRL",
-            # "PPO_lag_Pos": 'PPO_lag',
+            "PPO_lag_highD_velocity_distance_constraint": 'PPO_lag',
         }
 
     else:
@@ -278,6 +287,9 @@ def generate_plots():
         "Ram-0.2": "-",
         "Ram-0": "-",
         "VICRL_Hard": "-",
+        "VICRL_Hard": "-",
+        "UAICRL_CVAR": "-",
+        "UAICRL_EXP": "-",
     }
 
     linestyle_dict = {}

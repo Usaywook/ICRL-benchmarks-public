@@ -37,46 +37,63 @@ def get_plot_results_dir(env_id):
                 '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-27-2024-03:43-seed_666/',
                 '../save_model/VICRL-highD-velocity/train_VICRL_highD_velocity_constraint-multi_env-Aug-27-2024-13:33-seed_321/',
             ],
+            "UAICRL-CVAR_highD_velocity_constraint": [
+                '../save_model/UAICRL-highD-velocity/train_DICRL_QRDQN_CVaR_highD_velocity_constraint-multi_env-Aug-30-2024-12:32-seed_123/',
+                '../save_model/UAICRL-highD-velocity/train_DICRL_QRDQN_CVaR_highD_velocity_constraint-multi_env-Aug-31-2024-00:26-seed_321/',
+                '../save_model/UAICRL-highD-velocity/train_DICRL_QRDQN_CVaR_highD_velocity_constraint-multi_env-Aug-31-2024-12:23-seed_456/',
+            ],
+            "UAICRL-EXP_highD_velocity_constraint": [
+                '../save_model/UAICRL-highD-velocity/train_DICRL_QRDQN_EXP_highD_velocity_constraint-multi_env-Aug-30-2024-18:33-seed_123/',
+                '../save_model/UAICRL-highD-velocity/train_DICRL_QRDQN_EXP_highD_velocity_constraint-multi_env-Aug-31-2024-06:16-seed_321/',
+                '../save_model/UAICRL-highD-velocity/train_DICRL_QRDQN_EXP_highD_velocity_constraint-multi_env-Aug-31-2024-18:41-seed_456/',
+            ],
         }
     elif env_id == 'highD_distance_constraint':
         log_path_dict = {
-            "ppo_highD_no_slo_distance_dm-5": [
-                '../save_model/PPO-highD-distance/train_ppo_highD_no_slo_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_dm-5-multi_env-May-24-2022-00:31-seed_123/',
-                # '../save_model/PPO-highD-distance/train_ppo_highD_no_slo_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_dm-5-multi_env-May-23-2022-04:26-seed_123/',
+            "PPO_lag_highD_distance_constraint": [
+                '../save_model/PPO-Lag-highD-distance/train_ppo_lag_highD_distance_constraint-multi_env-Aug-30-2024-10:40-seed_123/',
+                '../save_model/PPO-Lag-highD-distance/train_ppo_lag_highD_distance_constraint-multi_env-Aug-31-2024-00:56-seed_321/',
+                '../save_model/PPO-Lag-highD-distance/train_ppo_lag_highD_distance_constraint-multi_env-Aug-31-2024-15:31-seed_456/',
+                '../save_model/PPO-Lag-highD-distance/train_ppo_lag_highD_distance_constraint-multi_env-Sep-01-2024-05:33-seed_654/',
+                '../save_model/PPO-Lag-highD-distance/train_ppo_lag_highD_distance_constraint-multi_env-Sep-01-2024-20:18-seed_666/',
             ],
-            "ppo_lag_highD_no_slo_distance_dm-5": [
-                '../save_model/PPO-Lag-highD-distance/train_ppo_lag_highD_no_slo_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_dm-5-multi_env-May-24-2022-00:53-seed_123/',
-                '../save_model/PPO-Lag-highD-distance/train_ppo_lag_highD_no_slo_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_dm-5-multi_env-May-26-2022-00:49-seed_321/',
-                '../save_model/PPO-Lag-highD-distance/train_ppo_lag_highD_no_slo_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_dm-5-multi_env-May-26-2022-00:49-seed_666/',
+            "Binary_highD_distance_constraint": [
+                '../save_model/Binary-highD-distance/train_Binary_highD_distance_constraint-multi_env-Aug-29-2024-15:59-seed_123/',
+                '../save_model/Binary-highD-distance/train_Binary_highD_distance_constraint-multi_env-Aug-30-2024-06:12-seed_321/',
+                '../save_model/Binary-highD-distance/train_Binary_highD_distance_constraint-multi_env-Aug-30-2024-20:13-seed_456/',
+                '../save_model/Binary-highD-distance/train_Binary_highD_distance_constraint-multi_env-Aug-31-2024-10:45-seed_654/',
+                '../save_model/Binary-highD-distance/train_Binary_highD_distance_constraint-multi_env-Sep-01-2024-02:55-seed_666/',
             ],
-            "ICRL_highD_slo_distance_constraint_no_is_bs--1-1e3_fs-5k_nee-10_lr-5e-4_no-buffer_dm-5": [
-                '../save_model/ICRL-highD-distance/train_ICRL_highD_slo_distance_constraint_no_is_bs--1-1e3_fs-5k_nee-10_lr-5e-4_no-buffer_dm-5-multi_env-May-25-2022-10:17-seed_123/',
+            "GAIL_highD_distance_constraint": [
+                '../save_model/GAIL-highD-distance/train_GAIL_highD_distance_constraint-multi_env-Aug-29-2024-15:58-seed_123/',
+                '../save_model/GAIL-highD-distance/train_GAIL_highD_distance_constraint-multi_env-Aug-29-2024-19:46-seed_321/',
+                '../save_model/GAIL-highD-distance/train_GAIL_highD_distance_constraint-multi_env-Aug-29-2024-23:50-seed_456/',
+                '../save_model/GAIL-highD-distance/train_GAIL_highD_distance_constraint-multi_env-Aug-30-2024-04:11-seed_654/',
+                '../save_model/GAIL-highD-distance/train_GAIL_highD_distance_constraint-multi_env-Aug-30-2024-08:14-seed_666/',
             ],
-            "VICRL_highD_slo_distance_constraint_p-9e-1-1e-1_bs--1-1e3_fs-5k_nee-10_lr-5e-4_cl-64-64_no-buffer_dm-20": [
-                '../save_model/VICRL-highD-distance/train_VICRL_highD_slo_distance_constraint_p-9e-1-1e-1_bs--1-1e3_fs-5k_nee-10_lr-5e-4_cl-64-64_no-buffer_dm-20-multi_env-May-28-2022-10:19-seed_123/',
+            "ICRL_highD_distance_constraint": [
+                '../save_model/ICRL-highD-distance/train_ICRL_highD_distance_constraint-multi_env-Aug-29-2024-16:00-seed_123/',
+                '../save_model/ICRL-highD-distance/train_ICRL_highD_distance_constraint-multi_env-Aug-30-2024-08:15-seed_321/',
+                '../save_model/ICRL-highD-distance/train_ICRL_highD_distance_constraint-multi_env-Aug-31-2024-00:13-seed_456/',
+                '../save_model/ICRL-highD-distance/train_ICRL_highD_distance_constraint-multi_env-Aug-31-2024-15:56-seed_654/',
+                '../save_model/ICRL-highD-distance/train_ICRL_highD_distance_constraint-multi_env-Sep-01-2024-08:22-seed_666/',
             ],
-            'Binary_highD_slo_distance_constraint_no_is_bs--1-1e3_nee-10_lr-1e-4_mspe-5e1_no-buffer_dm-20_data-1e-1':[
-                '../save_model/Binary-highD-distance/train_Binary_highD_slo_distance_constraint_no_is_bs--1-1e3_nee-10_lr-1e-4_mspe-5e1_no-buffer_dm-20_data-1e-1-multi_env-Jan-16-2023-16:03-seed_123/',
-                '../save_model/Binary-highD-distance/train_Binary_highD_slo_distance_constraint_no_is_bs--1-1e3_nee-10_lr-1e-4_mspe-5e1_no-buffer_dm-20_data-1e-1-multi_env-Jan-17-2023-02:20-seed_321/',
-                '../save_model/Binary-highD-distance/train_Binary_highD_slo_distance_constraint_no_is_bs--1-1e3_nee-10_lr-1e-4_mspe-5e1_no-buffer_dm-20_data-1e-1-multi_env-Jan-17-2023-12:21-seed_666/',
+            "VICRL_highD_distance_constraint": [
+                '../save_model/VICRL-highD-distance/train_VICRL_highD_distance_constraint-multi_env-Aug-29-2024-16:00-seed_123/',
+                '../save_model/VICRL-highD-distance/train_VICRL_highD_distance_constraint-multi_env-Aug-30-2024-09:26-seed_321/',
+                '../save_model/VICRL-highD-distance/train_VICRL_highD_distance_constraint-multi_env-Aug-31-2024-01:30-seed_456/',
+                '../save_model/VICRL-highD-distance/train_VICRL_highD_distance_constraint-multi_env-Aug-31-2024-17:31-seed_654/',
+                '../save_model/VICRL-highD-distance/train_VICRL_highD_distance_constraint-multi_env-Sep-01-2024-09:57-seed_666/',
             ],
-            "GAIL_highD_slo_distance_constraint_no_is_bs--1--1_lr-5e-4_no-buffer_dm-20": [
-                '../save_model/GAIL-highD-distance/train_GAIL_highD_slo_distance_constraint_no_is_bs--1--1_lr-5e-4_no-buffer_dm-20-multi_env-May-30-2022-02:11-seed_123/',
-                '../save_model/GAIL-highD-distance/train_GAIL_highD_slo_distance_constraint_no_is_bs--1--1_lr-5e-4_no-buffer_dm-20-multi_env-May-31-2022-04:39-seed_321/',
-                '../save_model/GAIL-highD-distance/train_GAIL_highD_slo_distance_constraint_no_is_bs--1--1_lr-5e-4_no-buffer_dm-20-multi_env-May-31-2022-04:40-seed_666/'
-            ]
         }
     elif env_id == 'highD_velocity_distance_constraint':
         log_path_dict = {
-            "ppo_highD_velocity_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_vm-40_dm-20": [
-                '../save_model/PPO-highD-velocity-distance/train_ppo_highD_velocity_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_vm-40_dm-20-multi_env-Aug-23-2022-05:41-seed_123/',
-                '../save_model/PPO-highD-velocity-distance/train_ppo_highD_velocity_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_vm-40_dm-20-multi_env-Aug-23-2022-05:41-seed_321/',
-                '../save_model/PPO-highD-velocity-distance/train_ppo_highD_velocity_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_vm-40_dm-20-multi_env-Aug-23-2022-05:41-seed_666/',
-            ],
-            "ppo_lag_highD_velocity_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_vm-40_dm-20": [
-                '../save_model/PPO-Lag-highD-velocity-distance/train_ppo_lag_highD_velocity_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_vm-40_dm-20-multi_env-Aug-14-2022-13:27-seed_123/',
-                '../save_model/PPO-Lag-highD-velocity-distance/train_ppo_lag_highD_velocity_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_vm-40_dm-20-multi_env-Aug-23-2022-05:41-seed_321/',
-                '../save_model/PPO-Lag-highD-velocity-distance/train_ppo_lag_highD_velocity_distance_penalty_bs--1_fs-5k_nee-10_lr-5e-4_vm-40_dm-20-multi_env-Aug-15-2022-07:57-seed_666/',
+            "PPO_lag_highD_velocity_distance_constraint": [
+                '../save_model/PPO-Lag-highD-velocity-distance/train_ppo_lag_highD_velocity_distance_constraint-multi_env-Aug-30-2024-10:05-seed_123/',
+                '../save_model/PPO-Lag-highD-velocity-distance/train_ppo_lag_highD_velocity_distance_constraint-multi_env-Aug-30-2024-21:49-seed_321/',
+                '../save_model/PPO-Lag-highD-velocity-distance/train_ppo_lag_highD_velocity_distance_constraint-multi_env-Aug-31-2024-08:06-seed_456/',
+                '../save_model/PPO-Lag-highD-velocity-distance/train_ppo_lag_highD_velocity_distance_constraint-multi_env-Aug-31-2024-19:49-seed_654/',
+                '../save_model/PPO-Lag-highD-velocity-distance/train_ppo_lag_highD_velocity_distance_constraint-multi_env-Sep-01-2024-06:23-seed_666/',
             ],
             "GAIL_highD_velocity_distance_constraint": [
                 '../save_model/GAIL-highD-velocity-distance/train_GAIL_velocity_distance_constraint-multi_env-Aug-27-2024-20:24-seed_123/',
@@ -102,6 +119,10 @@ def get_plot_results_dir(env_id):
             ],
             "VICRL_highD_velocity_distance_constraint": [
                '../save_model/VICRL-highD-velocity-distance/train_VICRL_highD_velocity_distance_constraint-multi_env-Aug-30-2024-03:04-seed_123/',
+               '../save_model/VICRL-highD-velocity-distance/train_VICRL_highD_velocity_distance_constraint-multi_env-Aug-30-2024-14:33-seed_321/',
+               '../save_model/VICRL-highD-velocity-distance/train_VICRL_highD_velocity_distance_constraint-multi_env-Aug-31-2024-01:49-seed_456/',
+               '../save_model/VICRL-highD-velocity-distance/train_VICRL_highD_velocity_distance_constraint-multi_env-Aug-31-2024-13:05-seed_654/',
+               '../save_model/VICRL-highD-velocity-distance/train_VICRL_highD_velocity_distance_constraint-multi_env-Sep-01-2024-00:47-seed_666/',
             ],
         }
     elif env_id == 'WGW-v0':
